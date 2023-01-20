@@ -1,4 +1,4 @@
-import './style.css'
+import 'dist\style.css'
 
 import * as THREE from 'three';
 import { InteractionManager } from "three.interactive";
@@ -119,11 +119,11 @@ window.addEventListener("resize", event => {
   renderer.setSize(innerWidth, innerHeight);
 })
 
-const interactionManager = new InteractionManager(
-  renderer,
-  camera,
-  renderer.domElement
-);
+// const interactionManager = new InteractionManager(
+//   renderer,
+//   camera,
+//   renderer.domElement
+// );
 
 // ORBIT CONTROLS
 
@@ -914,13 +914,13 @@ function addPlanet(){
     planet.rotation.order = "ZYX";
     planet.rotation.z = 0.2; 
     
-  planet.addEventListener("click", (event) => {
-    //event.stopPropagation();
-    console.log(`cube was clicked`);
-    const planet = event.target;
-    camera.position.set(planet.position.x, planet.position.y, planet.position.z);
-  });
-  interactionManager.add(planet);
+  // planet.addEventListener("click", (event) => {
+  //   //event.stopPropagation();
+  //   console.log(`cube was clicked`);
+  //   const planet = event.target;
+  //   camera.position.set(planet.position.x, planet.position.y, planet.position.z);
+  // });
+  // interactionManager.add(planet);
 
     scene.add(planet)
     
@@ -968,7 +968,7 @@ moveCamera();
 
 renderer.setAnimationLoop(() => {
   // controls.update();
-  interactionManager.update();
+  // interactionManager.update();
   
    reroll()
   
