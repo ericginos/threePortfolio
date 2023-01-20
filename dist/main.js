@@ -1,4 +1,4 @@
-import 'dist\style.css'
+import 'dist/style.css'
 
 import * as THREE from 'three';
 import { InteractionManager } from "three.interactive";
