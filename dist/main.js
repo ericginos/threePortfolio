@@ -1,10 +1,10 @@
-import '/dist/style.css'
+import './style.css'
 
-import * as THREE from 'three';
-import { InteractionManager } from "three.interactive";
+import * as THREE from './three';
+import { InteractionManager } from "./three.interactive";
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { MeshSurfaceSampler } from 'three/examples/jsm/math/MeshSurfaceSampler';
+import { OrbitControls } from './three/examples/jsm/controls/OrbitControls';
+import { MeshSurfaceSampler } from './three/examples/jsm/math/MeshSurfaceSampler';
 
 // const scene = new THREE.Scene();
 
