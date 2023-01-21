@@ -842,11 +842,6 @@ function addPlanet(){
     planet.rotation.order = "ZYX";
     planet.rotation.z = 0.2; 
     
-    planet.addEventListener("click", (event) => {
-      event.stopPropagation();
-      console.log(`cube was clicked`);
-    });
-    interactionManager.add(planet);
     
     scene.add(planet)
     
@@ -860,12 +855,7 @@ function addPlanet(){
     planet.rotation.order = "ZYX";
     planet.rotation.z = 0.2; 
     
-    planet.addEventListener("click", (event) => {
-      event.stopPropagation();
-      console.log(`cube was clicked`);
-    });
-    interactionManager.add(planet);
-    scene.add(planet)
+
     
   }  
   else if(counter % 5 == 3 || counter == 3){
@@ -877,12 +867,6 @@ function addPlanet(){
     planet.rotation.order = "ZYX";
     planet.rotation.z = 0.2; 
     
-    planet.addEventListener("click", (event) => {
-      event.stopPropagation();
-      console.log(`cube was clicked`);
-    });
-    interactionManager.add(planet);
-
     scene.add(planet)
     
   }
@@ -895,11 +879,6 @@ function addPlanet(){
     planet.rotation.order = "ZYX";
     planet.rotation.z = 0.2; 
     
-    planet.addEventListener("click", (event) => {
-      event.stopPropagation();
-      console.log(`cube was clicked`);
-    });
-    interactionManager.add(planet);
 
     scene.add(planet)
     
