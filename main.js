@@ -1,5 +1,5 @@
 
-import * as THREE from './three.js';//'../three';
+//import * as THREE from './three.js';//'../three';
 // import { InteractionManager } from "../three.interactive";
 
 // import { OrbitControls } from '../three/examples/jsm/controls/OrbitControls';
