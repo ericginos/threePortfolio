@@ -1,5 +1,5 @@
 
-//import * as THREE from './three.js';//'../three';
+//import * as THREE from 'node_modules/three';
 // import { InteractionManager } from "../three.interactive";
 
 // import { OrbitControls } from '../three/examples/jsm/controls/OrbitControls';
@@ -925,7 +925,7 @@ function addStar(){
 }
 Array(2000).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('./space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('./nebula.png');
 scene.background = spaceTexture;
  
 
