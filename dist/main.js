@@ -925,7 +925,7 @@ function addStar(){
 }
 Array(2000).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('./nebula.png');
+const spaceTexture = new THREE.TextureLoader().load('./space.jpg');
 scene.background = spaceTexture;
  
 
