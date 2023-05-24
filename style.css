@@ -10,7 +10,7 @@ canvas {
 :root {
   --dark-bg: rgba(15, 15, 15, 0.65);
   --grey-bg: rgba(105, 105, 105, 0.65);
-  --spacing: 350px;
+  --spacing: 10vw;
 
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -24,8 +24,8 @@ main {
   z-index: 99;
   position: absolute;
   width: 100%;
-  margin: 0px auto;
-  padding: 120px 0px;
+  margin: 0vw auto;
+  padding: 12vw 0vw;
   
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -48,36 +48,48 @@ canvas {
   header {
     background: var(--dark-bg);
     grid-column: 2 / span 5;
-    font-size: 2.5rem;
-    padding: 2rem;
+    font-size: 2.5vw;
+    padding: 2vw;
     margin-bottom: var(--spacing);
+    border-radius: 5vw;
+  }
+
+  img {
+    grid-column: 8 / span 10;
+    height: 25vw;
+    width: 25vw;
   }
 
   section {
     grid-column: 2 / 8;
-    padding: 1rem;
+    padding: 3vw;
     background: var(--dark-bg);
-    font-size: 1.25rem;
+    font-size: 1.25vw;
     line-height: 1.5;
     margin-bottom: var(--spacing);
+    border-radius: 10vw;
   }
 
   blockquote {
     margin: 0;
-    padding: 0;
+    padding: 3vw;
     grid-column: 2 / span 9;
     margin-bottom: var(--spacing);
-    line-height: 38px;
+    background: var(--grey-bg);
+    line-height: 2vw;
+    border-radius: 50vw;
   }
 
   blockquote p {
     color: black;
-    background-color: var(--grey-bg);;
-    font-size: 3rem;
+    font-size: 2.75vw;
     display: inline;
     line-height: 1;
   }
 
   .left {
     grid-column: 6 / 12;
+  }
+  .right {
+    grid-column: 2 / 12;
   }
