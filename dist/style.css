@@ -1,5 +1,17 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --dark-bg: rgba(15, 15, 15, 0.65);
   --grey-bg: rgba(105, 105, 105, 0.65);
@@ -22,6 +34,9 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: block;
 }
 
 main {
@@ -123,26 +138,49 @@ blockquote p {
 
 @media (max-width: 640px) {
   :root {
-    --content-pad: 1rem;
+    --content-pad: 1.1rem;
     --section-radius: 1rem;
     --header-radius: 1rem;
     --quote-radius: 1.2rem;
+    --spacing: 1.5rem;
   }
 
   main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: calc(1.25rem + env(safe-area-inset-top));
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
   }
 
   header {
-    font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+    font-size: clamp(1.55rem, 7.2vw, 2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem);
+  }
+
+  h3 {
+    font-size: clamp(1.08rem, 4.8vw, 1.3rem);
+  }
+
+  h4 {
+    font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+  }
+
+  p,
+  li {
+    line-height: 1.55;
   }
 
   section {
-    font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+    font-size: clamp(1rem, 4.3vw, 1.15rem);
   }
 
   blockquote p {
-    font-size: clamp(1rem, 5vw, 1.3rem);
+    font-size: clamp(1.1rem, 5.3vw, 1.4rem);
+  }
+
+  img {
+    height: clamp(150px, 44vw, 220px);
+    width: clamp(150px, 44vw, 220px);
   }
 }

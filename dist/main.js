@@ -7,13 +7,30 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#bg"),
   antialias: true,
 });
-renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-window.addEventListener("resize", () => {
-  camera.aspect = innerWidth / innerHeight;
+function getViewportSize() {
+  if (window.visualViewport) {
+    return {
+      width: Math.round(window.visualViewport.width),
+      height: Math.round(window.visualViewport.height),
+    };
+  }
+
+  return { width: innerWidth, height: innerHeight };
+}
+
+function resizeRenderer() {
+  const { width, height } = getViewportSize();
+  camera.aspect = width / height;
   camera.updateProjectionMatrix();
-  renderer.setSize(innerWidth, innerHeight);
-});
+  renderer.setSize(width, height, false);
+}
+
+resizeRenderer();
+window.addEventListener("resize", resizeRenderer);
+window.visualViewport?.addEventListener("resize", resizeRenderer);
+window.visualViewport?.addEventListener("scroll", resizeRenderer);
 
 const COLOR_MIN = 0;
 const COLOR_MAX = 250;
