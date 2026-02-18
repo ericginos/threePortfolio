@@ -3,7 +3,14 @@
 :root {
   --dark-bg: rgba(15, 15, 15, 0.65);
   --grey-bg: rgba(105, 105, 105, 0.65);
-  --spacing: 10vw;
+  --spacing: clamp(2rem, 7vw, 10vw);
+  --content-pad: clamp(0.9rem, 2.2vw, 3rem);
+  --section-radius: clamp(1.1rem, 7vw, 10vw);
+  --header-radius: clamp(1rem, 4vw, 5vw);
+  --quote-radius: clamp(1.5rem, 18vw, 50vw);
+  --copy-size: clamp(0.95rem, 1.25vw, 1.2rem);
+  --h1-size: clamp(1.5rem, 2.5vw, 3rem);
+  --quote-size: clamp(1.05rem, 2.75vw, 2.2rem);
 
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -23,7 +30,7 @@ main {
   z-index: 99;
   position: absolute;
   margin: 0 auto;
-  padding: 12vw 0;
+  padding: clamp(2.5rem, 10vw, 12vw) 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
@@ -40,41 +47,42 @@ blockquote {
 header {
   background: var(--dark-bg);
   grid-column: 2 / span 5;
-  font-size: 2.5vw;
-  padding: 2vw;
+  font-size: var(--h1-size);
+  padding: var(--content-pad);
   margin-bottom: var(--spacing);
-  border-radius: 5vw;
+  border-radius: var(--header-radius);
 }
 
 img {
   grid-column: 8 / span 10;
-  height: 25vw;
-  width: 25vw;
+  height: clamp(130px, 25vw, 420px);
+  width: clamp(130px, 25vw, 420px);
+  object-fit: contain;
 }
 
 section {
   grid-column: 2 / 8;
-  padding: 3vw;
+  padding: var(--content-pad);
   background: var(--dark-bg);
-  font-size: 1.25vw;
+  font-size: var(--copy-size);
   line-height: 1.5;
   margin-bottom: var(--spacing);
-  border-radius: 10vw;
+  border-radius: var(--section-radius);
 }
 
 blockquote {
   margin: 0;
-  padding: 3vw;
+  padding: var(--content-pad);
   grid-column: 2 / span 9;
   margin-bottom: var(--spacing);
   background: var(--grey-bg);
-  line-height: 2vw;
-  border-radius: 50vw;
+  line-height: 1.2;
+  border-radius: var(--quote-radius);
 }
 
 blockquote p {
   color: black;
-  font-size: 2.75vw;
+  font-size: var(--quote-size);
   display: inline;
   line-height: 1;
 }
@@ -85,4 +93,56 @@ blockquote p {
 
 .right {
   grid-column: 2 / 12;
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  header,
+  section,
+  blockquote,
+  .left,
+  .right,
+  img {
+    grid-column: 1 / -1;
+  }
+
+  header,
+  section,
+  blockquote {
+    margin-left: clamp(0.75rem, 3vw, 1.5rem);
+    margin-right: clamp(0.75rem, 3vw, 1.5rem);
+  }
+
+  img {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --content-pad: 1rem;
+    --section-radius: 1rem;
+    --header-radius: 1rem;
+    --quote-radius: 1.2rem;
+  }
+
+  main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  header {
+    font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+  }
+
+  section {
+    font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+  }
+
+  blockquote p {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+  }
 }
