@@ -5,11 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:phone": "vite --host 0.0.0.0 --port 5173",
+    "serve:dist": "live-server dist --port=5173",
+    "serve:dist:phone": "live-server dist --host=0.0.0.0 --port=5173",
     "build": "vite build",
     "preview": "vite preview",
+    "preview:phone": "vite preview --host 0.0.0.0 --port 4173",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "vite": "^3.2.3"
   },
   "dependencies": {
