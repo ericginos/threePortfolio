@@ -1,12 +1,5 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-
 :root {
   --dark-bg: rgba(15, 15, 15, 0.65);
   --grey-bg: rgba(105, 105, 105, 0.65);
@@ -17,79 +10,79 @@ canvas {
   font-style: normal;
 }
 
-
-main {
-  width: 100vw;
-  color: white;
-  z-index: 99;
-  position: absolute;
-  width: 100%;
-  margin: 0vw auto;
-  padding: 12vw 0vw;
-  
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
-
-h1, h2, h3, blockquote {
-  font-family: elevon, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
+/* Keep 3D background fixed while text scrolls above it. */
 canvas {
   position: fixed;
   top: 0;
   left: 0;
 }
 
+main {
+  width: 100%;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  margin: 0 auto;
+  padding: 12vw 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
 
+h1,
+h2,
+h3,
+blockquote {
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
-  header {
-    background: var(--dark-bg);
-    grid-column: 2 / span 5;
-    font-size: 2.5vw;
-    padding: 2vw;
-    margin-bottom: var(--spacing);
-    border-radius: 5vw;
-  }
+header {
+  background: var(--dark-bg);
+  grid-column: 2 / span 5;
+  font-size: 2.5vw;
+  padding: 2vw;
+  margin-bottom: var(--spacing);
+  border-radius: 5vw;
+}
 
-  img {
-    grid-column: 8 / span 10;
-    height: 25vw;
-    width: 25vw;
-  }
+img {
+  grid-column: 8 / span 10;
+  height: 25vw;
+  width: 25vw;
+}
 
-  section {
-    grid-column: 2 / 8;
-    padding: 3vw;
-    background: var(--dark-bg);
-    font-size: 1.25vw;
-    line-height: 1.5;
-    margin-bottom: var(--spacing);
-    border-radius: 10vw;
-  }
+section {
+  grid-column: 2 / 8;
+  padding: 3vw;
+  background: var(--dark-bg);
+  font-size: 1.25vw;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+  border-radius: 10vw;
+}
 
-  blockquote {
-    margin: 0;
-    padding: 3vw;
-    grid-column: 2 / span 9;
-    margin-bottom: var(--spacing);
-    background: var(--grey-bg);
-    line-height: 2vw;
-    border-radius: 50vw;
-  }
+blockquote {
+  margin: 0;
+  padding: 3vw;
+  grid-column: 2 / span 9;
+  margin-bottom: var(--spacing);
+  background: var(--grey-bg);
+  line-height: 2vw;
+  border-radius: 50vw;
+}
 
-  blockquote p {
-    color: black;
-    font-size: 2.75vw;
-    display: inline;
-    line-height: 1;
-  }
+blockquote p {
+  color: black;
+  font-size: 2.75vw;
+  display: inline;
+  line-height: 1;
+}
 
-  .left {
-    grid-column: 6 / 12;
-  }
-  .right {
-    grid-column: 2 / 12;
-  }
+.left {
+  grid-column: 6 / 12;
+}
+
+.right {
+  grid-column: 2 / 12;
+}
